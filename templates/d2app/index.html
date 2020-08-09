@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <!-- Google model viewer -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    <!-- Babylon model viewer -->
+    <script src="https://cdn.babylonjs.com/viewer/babylon.viewer.js"></script>
+
+    <link rel="stylesheet" href="{% static "d2app/css/index.css" %}">
+    <title>D2ModelViewerDjango</title>
+
+</head>
+  <body>
+
+    <div class="row justify-content-center" id="top-text">
+      <h1>Select a model</h1>
+    </div>
+    <div class="container-fluid fill-height">
+      <div class="row" id="form-row">
+        <div class="row-4"></div>
+          <form action="submit" method="post">
+              {% csrf_token %}
+              {{ buttons_html|safe }}
+          </form>
+      </div>
+        <div class="row-8 justify-content-center">
+            <model-viewer src="{% static "d2app/models/model.glb" %}" camera-controls></model-viewer>
+        </div>
+    </div>
+  </body>
+</html>
