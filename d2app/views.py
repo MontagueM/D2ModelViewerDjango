@@ -26,7 +26,7 @@ def get_buttons_html():
             model_files.append(file)
 
     new_html = ''
-    for i in range(5):
+    for i in range(20):
         model_data_file = model_unpacker.get_model_data_file(model_files[i])
         if model_data_file.split('-')[0] != folder.split('_')[-1]:
             continue

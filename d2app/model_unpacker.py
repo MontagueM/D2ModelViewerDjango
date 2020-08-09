@@ -341,10 +341,10 @@ def trim_verts_data(verts_data, faces_data):
 def get_obj_str(faces_data, verts_data):
     verts_str = ''
     for coord in verts_data:
-        verts_str += f'v {coord[0]} {coord[1]} {coord[2]}\n'
+        verts_str += f'v {coord[0]} {coord[2]} {coord[1]}\n'
     faces_str = ''
     for face in faces_data:
-        faces_str += f'f {face[0]}// {face[1]}// {face[2]}//\n'
+        faces_str += f'f {face[0]}// {face[2]}// {face[1]}//\n'
     return verts_str + faces_str
 
 
