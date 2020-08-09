@@ -19,14 +19,14 @@ html, body {
     height: 100%;
 }
 
-.row {
-    margin: 0;
-    align-content: center;
-    height: 100%;
-}
+/*.row {*/
+/*    margin: 0;*/
+/*    align-content: center;*/
+/*    height: 100%;*/
+/*}*/
 
 #buttons {
-    border-right: 1px solid grey;
+    /*border-right: 1px solid grey;*/
     overflow-y: scroll;
 }
 
@@ -37,4 +37,13 @@ html, body {
 #model-viewer {
     height:100%;
     width: 100%;
+}
+
+.my-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#button {
+    border-bottom: 1px solid grey;
 }

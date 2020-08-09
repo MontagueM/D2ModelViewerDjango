@@ -29,12 +29,10 @@
         <div class="row h-100">
             <div class="col-4 container-col" id="buttons">
                 <div class="row">
-                    <div class="col-2"></div>
-                    <form method="post">
-                        {% csrf_token %}
-                        {{ buttons_html|safe }}
-                    </form>
-                    <div class="col-2"></div>
+{#                    <div class="col-2"></div>#}
+                    {% csrf_token %}
+                    {{ buttons_html|safe }}
+{#                    <div class="col-2"></div>#}
                     </div>
             </div>
             <div class="col-8 container-col" id="model-view">
