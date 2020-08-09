@@ -26,11 +26,18 @@ def get_buttons_html():
             model_files.append(file)
 
     new_html = ''
-    for i in range(20):
+    for i in range(len(model_files)):
         model_data_file = model_unpacker.get_model_data_file(model_files[i])
         if model_data_file.split('-')[0] != folder.split('_')[-1]:
             continue
-        new_html += f'<div><button class="model-button" type="submit" onclick="unpackModel()" name="{model_files[i]}">{model_data_file}</button></div>\n'
+        new_html += f'' \
+                    f'<div class="col-3">' \
+                    f'<button class="btn btn-outline-dark" type="submit" name="{model_files[i]}">{model_data_file}</button>' \
+                    f'</div>' \
+                    f'<div class="col-5">' \
+                    f'<input type="text" name="model-desc" placeholder="Model desc."/>' \
+                    f'</div>' \
+                    f'\n'
 
     return new_html
 
@@ -55,6 +62,7 @@ def submit(request):
     returns the ids of both songs involved"""
     try:
         info = request.POST
+        print(f"Info gotten from input is {info.get('model-desc')}")
         # Extracts the song IDs from the "name" values of the button that was pressed
         model_file_name = list(info.items())[-1][0]
         model_file_hash = model_unpacker.get_hash_from_file(model_file_name).upper()

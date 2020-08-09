@@ -27,6 +27,7 @@ html, body {
 
 #buttons {
     border-right: 1px solid grey;
+    overflow-y: scroll;
 }
 
 #model-view {
