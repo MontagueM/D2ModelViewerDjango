@@ -22,19 +22,20 @@
 </head>
   <body>
 
-    <div class="row justify-content-center" id="top-text">
+    <div id="top-text">
       <h1>Select a model</h1>
     </div>
-    <div class="container-fluid fill-height">
-      <div class="row" id="form-row">
-        <div class="row-4"></div>
-          <form action="submit" method="post">
-              {% csrf_token %}
-              {{ buttons_html|safe }}
-          </form>
-      </div>
-        <div class="row-8 justify-content-center">
-            <model-viewer src="{% static "d2app/models/model.glb" %}" camera-controls></model-viewer>
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-4 container-col" id="buttons">
+              <form action="submit" method="post">
+                  {% csrf_token %}
+                  {{ buttons_html|safe }}
+              </form>
+            </div>
+            <div class="col-8 container-col" id="model-view">
+                <model-viewer src="{% static "d2app/models/model.glb" %}" camera-controls id="model-viewer"></model-viewer>
+            </div>
         </div>
     </div>
   </body>

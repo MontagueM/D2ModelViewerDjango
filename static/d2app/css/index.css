@@ -1,0 +1,39 @@
+{% load static %}
+
+/** {*/
+/*    border: 1px solid black;*/
+/*}*/
+
+html, body {
+    height: 100%;
+
+}
+
+/* Structural Properties */
+.container-fluid {
+    height: 100%;
+    overflow: hidden;
+}
+
+.container-col {
+    height: 100%;
+}
+
+.row {
+    margin: 0;
+    align-content: center;
+    height: 100%;
+}
+
+#buttons {
+    border-right: 1px solid grey;
+}
+
+#model-view {
+    height: 100%;
+}
+
+#model-viewer {
+    height:100%;
+    width: 100%;
+}

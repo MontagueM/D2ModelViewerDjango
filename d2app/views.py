@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from d2app import pkg_db
 from d2app import model_unpacker
 import os
+import numpy as np
 
 # Create your views here.
 
@@ -66,4 +67,4 @@ def submit(request):
     except Exception as e:
         print(e)
 
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect(f'/?ignore={np.random.randint(1, 99999)}')
